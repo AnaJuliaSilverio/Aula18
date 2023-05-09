@@ -7,9 +7,6 @@ public class Exercicio1 {
         Scanner sc = new Scanner(System.in);
         List<Integer> valores = new ArrayList<>();
         adicionarElementosLista(valores);
-        for (int i = 0; i < valores.size(); i++) {
-            System.out.println(valores.get(i));
-        }
         removeElementoLista(valores);
         System.out.println("Lista atualizada");
         for (int i = 0; i < valores.size(); i++) {
@@ -35,7 +32,6 @@ public class Exercicio1 {
         valorRemovido = sc.nextInt();
         for (int i = 0; i < valores.size(); i++) {
             if (valores.get(i).equals(valorRemovido)){
-                System.out.println(valores.get(i)+" "+valorRemovido);
                 valores.remove(valorRemovido);
             }
         }
