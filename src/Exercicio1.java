@@ -1,17 +1,46 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Exercicio1 {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        Scanner sc = new Scanner(System.in);
+        List<Integer> valores = new ArrayList<>();
+        adicionarElementosLista(valores);
+        for (int i = 0; i < valores.size(); i++) {
+            System.out.println(valores.get(i));
         }
+        removeElementoLista(valores);
+        System.out.println("Lista atualizada");
+        for (int i = 0; i < valores.size(); i++) {
+            System.out.println(valores.get(i));
+        }
+
+    }
+    public static void adicionarElementosLista(List<Integer> valores){
+        Scanner sc = new Scanner(System.in);
+        int quantidade;
+        System.out.println("Quantos elementos quer adicionar a lista? ");
+        quantidade = sc.nextInt();
+        for (int i = 0; i < quantidade; i++) {
+            System.out.println("Valor "+(i+1));
+            valores.add(sc.nextInt());
+        }
+
+    }
+    public static void removeElementoLista(List<Integer> valores){
+        Scanner sc = new Scanner(System.in);
+        Integer valorRemovido;
+        System.out.println("Qual valor deseja remover da lista? ");
+        valorRemovido = sc.nextInt();
+        for (int i = 0; i < valores.size(); i++) {
+            if (valores.get(i).equals(valorRemovido)){
+                System.out.println(valores.get(i)+" "+valorRemovido);
+                valores.remove(valorRemovido);
+            }
+        }
+
+
+
     }
 }
