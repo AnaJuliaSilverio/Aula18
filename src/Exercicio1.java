@@ -27,14 +27,17 @@ public class Exercicio1 {
     }
     public static void removeElementoLista(List<Integer> valores){
         Scanner sc = new Scanner(System.in);
+        List<Integer> valoresRepetidos = new ArrayList<>();
         Integer valorRemovido;
         System.out.println("Qual valor deseja remover da lista? ");
         valorRemovido = sc.nextInt();
         for (int i = 0; i < valores.size(); i++) {
             if (valores.get(i).equals(valorRemovido)){
-                valores.remove(valorRemovido);
+                valoresRepetidos.add(valorRemovido);
             }
         }
+        //garantir que os elementos repetido vao ser removidos
+        valores.removeAll(valoresRepetidos);
 
 
 
